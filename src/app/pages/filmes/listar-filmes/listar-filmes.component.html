@@ -1,0 +1,28 @@
+<a href="/filmes/incluir/" type="button" class="btn btn-success m-3">Incluir</a>
+<hr/>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Título</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Agencia</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let filmes of filmes">
+        <td>{{filme._id}}</td>
+        <td>{{filme.titulo}}</td>
+        <td>{{filme.autor.nome}}</td>
+        <td>{{filme.genero}}</td>
+        <td>{{filme.agencia}}</td>
+        <td>
+            <a type="button" class="btn btn-primary">Alterar</a>
+            <a type="button" class="btn btn-danger m-1">Deletar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

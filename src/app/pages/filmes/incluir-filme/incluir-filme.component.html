@@ -1,0 +1,31 @@
+<div class="container">
+<form class="formulario" novalidate="novalidate" (ngSubmit)="salvar()" [formGroup]="form">
+    <div class="row">
+        <div class="container">
+            <h3 class="tac mb20"><strong>Incluir Novo Filme</strong></h3>
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-control txt" autocomplete="off" id="titulo" formControlName="titulo" />
+            </div>
+            <div class="form-group">
+                <label for="autor">Autor</label>
+                <select aria-label="Default select example" class="form-control" id="autor" formControlName="autor">
+                    <option *ngFor="let autor of autores" [value]="autor._id">{{autor.nome}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="editora">Genero</label>
+                <input type="text" class="form-control txt" autocomplete="off" id="editora" formControlName="genero" />
+            </div>
+            <div class="form-group">
+                <label for="editora">Agencia</label>
+                <input type="text" class="form-control txt" autocomplete="off" id="editora" formControlName="agencia" />
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" [disabled]="!form.valid" type="submit">Salvar</button>
+            <button class="btn btn-danger m-1" (click)=cancelar()>Cancelar</button>
+        </div>
+    </div>
+</form>        
+</div>
